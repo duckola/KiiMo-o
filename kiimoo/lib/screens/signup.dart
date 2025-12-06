@@ -25,62 +25,74 @@ class Signup extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(
               top: MediaQuery.of(context).size.height * 0.3,
-              left: MediaQuery.of(context).size.width * 0.1,
+              left: MediaQuery.of(context).size.width * 0.075,
               ),
           child: Text(
             "Create an Account",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 35,
+              fontSize: MediaQuery.of(context).size.height * 0.045, 
+
               fontWeight: FontWeight.bold
             ),
           ),
         ),
 //textboxes 
-        Padding(
-          padding: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.4,
-            left: MediaQuery.of(context).size.width * 0.05,
-            right: MediaQuery.of(context).size.width * 0.05,
-          ),
-        child: Column(
-          children: [
-            // Email TextField
-            TextField(
+       Padding(
+  padding: EdgeInsets.only(
+    top: MediaQuery.of(context).size.height * 0.4,
+    left: MediaQuery.of(context).size.width * 0.05,
+    right: MediaQuery.of(context).size.width * 0.05,
+  ),
+  child: Container(
+    height: MediaQuery.of(context).size.height * 0.15, // total box height
+    decoration: BoxDecoration(
+      color: Color.fromRGBO(255, 255, 255, 0.719),
+      borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.02), 
+    ),
+    child: Column(
+      children: [
+        Expanded(
+          child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.04), 
+            child: TextField(
+              
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                hintText: "Enter email", // placeholder text
-                hintStyle: TextStyle(color: Colors.white70),
-                filled: true,
-                fillColor: Colors.white12,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide.none,
-                ),
+                hintText: "Enter email",
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.015,),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
+          ),
+        ),
 
-            SizedBox(height: MediaQuery.of(context).size.height * 0.02), // spacing
+        Divider(
+          color: Colors.black38,
+          thickness: MediaQuery.of(context).size.height * 0.0003,
+          height: 0,
+        ),
 
-            // Password TextField
-            TextField(
+        Expanded(
+          child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.04),
+            child: TextField(
               obscureText: true,
               decoration: InputDecoration(
-                hintText: "Enter password", // placeholder text
-                hintStyle: TextStyle(color: Colors.white70),
-                filled: true,
-                fillColor: Colors.white12,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                ),
+                hintText: "Enter password",
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.015,),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
-          ],
+          ),
         ),
-      ),
+      ],
+    ),
+  ),
+),
+
 
 
         ], 
